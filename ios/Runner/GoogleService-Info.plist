@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>279680975533-p17l5ua6cs2b9r7m0oiqjujtc2aisek0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.279680975533-p17l5ua6cs2b9r7m0oiqjujtc2aisek0</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>279680975533-cfjh4o4oiplmon9onr20r080lnbfuqfd.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAe1fpEisEwTCEPdAyLKCWlEe3vBNS-iBg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>279680975533</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mycompany.oportunitech</string>
+	<key>PROJECT_ID</key>
+	<string>oportunitech-10s6u8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>oportunitech-10s6u8.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:279680975533:ios:6673fc2a55c22a9a417c24</string>
+	<key>DATABASE_URL</key>
+	<string>https://oportunitech-10s6u8-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
