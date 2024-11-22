@@ -1340,17 +1340,31 @@ class _ListTestsWidgetState extends State<ListTestsWidget> {
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 10.0, 12.0, 5.0),
-                                                child: Text(
-                                                  'Test por discapacidad',
-                                                  textAlign: TextAlign.end,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Inter Tight',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context
+                                                        .pushNamed('viewQuiz');
+                                                  },
+                                                  child: Text(
+                                                    'Test por discapacidad',
+                                                    textAlign: TextAlign.end,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Inter Tight',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
                                                 ),
                                               ),
                                               Padding(

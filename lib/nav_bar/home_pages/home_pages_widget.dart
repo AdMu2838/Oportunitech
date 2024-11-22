@@ -1,5 +1,5 @@
 import '/backend/backend.dart';
-import '/components/modal_trabajo_widget.dart';
+import '/components/modal_trabajo/modal_trabajo_widget.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

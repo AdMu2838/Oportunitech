@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'nav_component_widget.dart' show NavComponentWidget;
+import 'need_accesibility_widget.dart' show NeedAccesibilityWidget;
 import 'package:flutter/material.dart';
 
-class NavComponentModel extends FlutterFlowModel<NavComponentWidget> {
+class NeedAccesibilityModel extends FlutterFlowModel<NeedAccesibilityWidget> {
   @override
   void initState(BuildContext context) {}
 

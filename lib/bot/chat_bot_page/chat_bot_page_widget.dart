@@ -144,10 +144,7 @@ class _ChatBotPageWidgetState extends State<ChatBotPageWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              if (Navigator.of(context).canPop()) {
-                context.pop();
-              }
-              context.pushNamed('HomePages');
+              context.safePop();
             },
           ),
           title: Text(

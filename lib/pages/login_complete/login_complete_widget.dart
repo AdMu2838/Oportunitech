@@ -1,4 +1,4 @@
-import '/components/datepicker_widget.dart';
+import '/components/datepicker/datepicker_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -465,7 +465,7 @@ class _LoginCompleteWidgetState extends State<LoginCompleteWidget> {
                                         0.0, 0.0, 0.0, 16.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        context.goNamed('HomePages');
+                                        context.goNamed('selectChat');
                                       },
                                       text: 'Registrarme',
                                       options: FFButtonOptions(

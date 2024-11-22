@@ -6,10 +6,10 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'cv_model.dart';
-export 'cv_model.dart';
+import 'cv_copy_model.dart';
+export 'cv_copy_model.dart';
 
-class CvWidget extends StatefulWidget {
+class CvCopyWidget extends StatefulWidget {
   /// Create a visually appealing and modern form for submitting a CV. Include
   /// the following sections:
   ///
@@ -23,21 +23,21 @@ class CvWidget extends StatefulWidget {
   /// Competency Test: Highlight a button to redirect to an external test.
   /// Use a clean layout, vivid colors, modern typography, and subtle animations
   /// for a professional yet inviting user experience.
-  const CvWidget({super.key});
+  const CvCopyWidget({super.key});
 
   @override
-  State<CvWidget> createState() => _CvWidgetState();
+  State<CvCopyWidget> createState() => _CvCopyWidgetState();
 }
 
-class _CvWidgetState extends State<CvWidget> {
-  late CvModel _model;
+class _CvCopyWidgetState extends State<CvCopyWidget> {
+  late CvCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CvModel());
+    _model = createModel(context, () => CvCopyModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -74,7 +74,7 @@ class _CvWidgetState extends State<CvWidget> {
             },
           ),
           title: Text(
-            'Creador de CV',
+            'Curriculum Vitae',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Inter Tight',
                   color: Colors.white,
@@ -278,6 +278,107 @@ class _CvWidgetState extends State<CvWidget> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
+                          Text(
+                            'Condición de Discapacidad',
+                            style: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .override(
+                                  fontFamily: 'Inter Tight',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.5, 0.0),
+                                child: Text(
+                                  'subir desde',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ].divide(const SizedBox(width: 12.0)),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Connadis',
+                                  options: FFButtonOptions(
+                                    height: 45.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: const Color(0xFF0077B5),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: FFButtonWidget(
+                                  onPressed: () {
+                                    print('Button pressed ...');
+                                  },
+                                  text: 'Minsa',
+                                  options: FFButtonOptions(
+                                    height: 45.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                  ),
+                                ),
+                              ),
+                            ].divide(const SizedBox(width: 12.0)),
+                          ),
+                        ].divide(const SizedBox(height: 16.0)),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.circular(12.0),
+                      border: Border.all(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 1.0,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 16.0, 16.0, 16.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -428,6 +529,102 @@ class _CvWidgetState extends State<CvWidget> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Habilidades y conocimientos',
+                                style: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Inter Tight',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                              FlutterFlowIconButton(
+                                buttonSize: 40.0,
+                                icon: Icon(
+                                  Icons.add_circle_outline_rounded,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 24.0,
+                                ),
+                                onPressed: () {
+                                  print('IconButton pressed ...');
+                                },
+                              ),
+                            ],
+                          ),
+                          FlutterFlowChoiceChips(
+                            options: const [
+                              ChipData('Project Management'),
+                              ChipData('UI/UX Design'),
+                              ChipData('Data Analysis'),
+                              ChipData('Leadership'),
+                              ChipData('Communication')
+                            ],
+                            onChanged: (val) => safeSetState(() =>
+                                _model.choiceChipsValue = val?.firstOrNull),
+                            selectedChipStyle: ChipStyle(
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              iconColor:
+                                  FlutterFlowTheme.of(context).primaryText,
+                              iconSize: 18.0,
+                              elevation: 0.0,
+                            ),
+                            unselectedChipStyle: ChipStyle(
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).accent4,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodySmall
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    letterSpacing: 0.0,
+                                  ),
+                              iconColor:
+                                  FlutterFlowTheme.of(context).primaryText,
+                              iconSize: 18.0,
+                              elevation: 0.0,
+                            ),
+                            chipSpacing: 8.0,
+                            rowSpacing: 8.0,
+                            multiselect: false,
+                            alignment: WrapAlignment.start,
+                            controller: _model.choiceChipsValueController ??=
+                                FormFieldController<List<String>>(
+                              [],
+                            ),
+                            wrapped: true,
+                          ),
+                        ].divide(const SizedBox(height: 16.0)),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.circular(12.0),
+                      border: Border.all(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 1.0,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 16.0, 16.0, 16.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
                           Text(
                             'Importar CV desde',
                             style: FlutterFlowTheme.of(context)
@@ -557,102 +754,6 @@ class _CvWidgetState extends State<CvWidget> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Habilidades y conocimientos',
-                                style: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Inter Tight',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              FlutterFlowIconButton(
-                                buttonSize: 40.0,
-                                icon: Icon(
-                                  Icons.add_circle_outline_rounded,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 24.0,
-                                ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
-                                },
-                              ),
-                            ],
-                          ),
-                          FlutterFlowChoiceChips(
-                            options: const [
-                              ChipData('Project Management'),
-                              ChipData('UI/UX Design'),
-                              ChipData('Data Analysis'),
-                              ChipData('Leadership'),
-                              ChipData('Communication')
-                            ],
-                            onChanged: (val) => safeSetState(() =>
-                                _model.choiceChipsValue = val?.firstOrNull),
-                            selectedChipStyle: ChipStyle(
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                  ),
-                              iconColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              iconSize: 18.0,
-                              elevation: 0.0,
-                            ),
-                            unselectedChipStyle: ChipStyle(
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).accent4,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                  ),
-                              iconColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              iconSize: 18.0,
-                              elevation: 0.0,
-                            ),
-                            chipSpacing: 8.0,
-                            rowSpacing: 8.0,
-                            multiselect: false,
-                            alignment: WrapAlignment.start,
-                            controller: _model.choiceChipsValueController ??=
-                                FormFieldController<List<String>>(
-                              [],
-                            ),
-                            wrapped: true,
-                          ),
-                        ].divide(const SizedBox(height: 16.0)),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      borderRadius: BorderRadius.circular(12.0),
-                      border: Border.all(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 1.0,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 16.0, 16.0, 16.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
                           Text(
                             'Evaluación de competencias',
                             style: FlutterFlowTheme.of(context)
@@ -664,6 +765,7 @@ class _CvWidgetState extends State<CvWidget> {
                           ),
                           Text(
                             'Realice nuestra prueba estandarizada para demostrar sus competencias profesionales',
+                            textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -674,8 +776,8 @@ class _CvWidgetState extends State<CvWidget> {
                                 ),
                           ),
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed('ListTests');
                             },
                             text: 'Iniciar evaluación',
                             options: FFButtonOptions(

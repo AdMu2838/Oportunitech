@@ -111,7 +111,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'RecuperarPage',
           path: '/recuperarPage',
-          requireAuth: true,
           builder: (context, params) => const RecuperarPageWidget(),
         ),
         FFRoute(
@@ -151,6 +150,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'LoginComplete',
           path: '/loginComplete',
+          requireAuth: true,
           builder: (context, params) => const LoginCompleteWidget(),
         ),
         FFRoute(
@@ -170,12 +170,30 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ChangePassword',
           path: '/changePassword',
+          requireAuth: true,
           builder: (context, params) => const ChangePasswordWidget(),
         ),
         FFRoute(
           name: 'cv',
           path: '/cv',
+          requireAuth: true,
           builder: (context, params) => const CvWidget(),
+        ),
+        FFRoute(
+          name: 'cvCopy',
+          path: '/cvCopy',
+          requireAuth: true,
+          builder: (context, params) => const CvCopyWidget(),
+        ),
+        FFRoute(
+          name: 'needAccesibility',
+          path: '/needAccesibility',
+          builder: (context, params) => const NeedAccesibilityWidget(),
+        ),
+        FFRoute(
+          name: 'work_preferences',
+          path: '/workPreferences',
+          builder: (context, params) => const WorkPreferencesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

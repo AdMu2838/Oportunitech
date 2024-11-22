@@ -51,10 +51,7 @@ class _VoiceBotWidgetState extends State<VoiceBotWidget> {
               size: 24.0,
             ),
             onPressed: () async {
-              if (Navigator.of(context).canPop()) {
-                context.pop();
-              }
-              context.pushNamed('HomePages');
+              context.safePop();
             },
           ),
           title: Text(
