@@ -3,10 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -72,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomePagesWidget() : const LoginPageWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const LoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomePagesWidget() : const LoginPageWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const LoginPageWidget(),
         ),
         FFRoute(
           name: 'LoginPage',
@@ -88,27 +89,93 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HomePages',
           path: '/homePages',
-          builder: (context, params) => const HomePagesWidget(),
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'HomePages')
+              : const HomePagesWidget(),
         ),
         FFRoute(
           name: 'ProfilePage',
           path: '/profilePage',
-          builder: (context, params) => const ProfilePageWidget(),
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'ProfilePage')
+              : const ProfilePageWidget(),
         ),
         FFRoute(
           name: 'ChatBotPage',
           path: '/chatBotPage',
+          requireAuth: true,
           builder: (context, params) => const ChatBotPageWidget(),
         ),
         FFRoute(
           name: 'RecuperarPage',
           path: '/recuperarPage',
+          requireAuth: true,
           builder: (context, params) => const RecuperarPageWidget(),
         ),
         FFRoute(
           name: 'CvPage',
           path: '/cvPage',
+          requireAuth: true,
           builder: (context, params) => const CvPageWidget(),
+        ),
+        FFRoute(
+          name: 'MatchEmpresaPage',
+          path: '/matchEmpresaPage',
+          requireAuth: true,
+          builder: (context, params) => const MatchEmpresaPageWidget(),
+        ),
+        FFRoute(
+          name: 'MatchPostulantePage',
+          path: '/matchPostulantePage',
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'MatchPostulantePage')
+              : const MatchPostulantePageWidget(),
+        ),
+        FFRoute(
+          name: 'ListTests',
+          path: '/listTests',
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'ListTests')
+              : const ListTestsWidget(),
+        ),
+        FFRoute(
+          name: 'viewQuiz',
+          path: '/viewQuiz',
+          requireAuth: true,
+          builder: (context, params) => const ViewQuizWidget(),
+        ),
+        FFRoute(
+          name: 'LoginComplete',
+          path: '/loginComplete',
+          builder: (context, params) => const LoginCompleteWidget(),
+        ),
+        FFRoute(
+          name: 'VoiceBot',
+          path: '/voiceBot',
+          requireAuth: true,
+          builder: (context, params) => const VoiceBotWidget(),
+        ),
+        FFRoute(
+          name: 'selectChat',
+          path: '/selectChat',
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'selectChat')
+              : const SelectChatWidget(),
+        ),
+        FFRoute(
+          name: 'ChangePassword',
+          path: '/changePassword',
+          builder: (context, params) => const ChangePasswordWidget(),
+        ),
+        FFRoute(
+          name: 'cv',
+          path: '/cv',
+          builder: (context, params) => const CvWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -293,14 +360,14 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
+              ? Container(
+                  color: Colors.transparent,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/logo-removebg-preview.png',
+                      width: 150.0,
+                      height: 150.0,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 )

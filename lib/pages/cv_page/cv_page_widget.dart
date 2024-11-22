@@ -996,7 +996,7 @@ class _CvPageWidgetState extends State<CvPageWidget> {
                   decoration: const BoxDecoration(),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         if (_model.formKey.currentState == null ||

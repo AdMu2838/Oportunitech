@@ -21,6 +21,12 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   late bool passwordCreateVisibility;
   String? Function(BuildContext, String?)?
       passwordCreateTextControllerValidator;
+  // State field(s) for password_confirm widget.
+  FocusNode? passwordConfirmFocusNode;
+  TextEditingController? passwordConfirmTextController;
+  late bool passwordConfirmVisibility;
+  String? Function(BuildContext, String?)?
+      passwordConfirmTextControllerValidator;
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
@@ -34,6 +40,7 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   @override
   void initState(BuildContext context) {
     passwordCreateVisibility = false;
+    passwordConfirmVisibility = false;
     passwordVisibility = false;
   }
 
@@ -45,6 +52,9 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
 
     passwordCreateFocusNode?.dispose();
     passwordCreateTextController?.dispose();
+
+    passwordConfirmFocusNode?.dispose();
+    passwordConfirmTextController?.dispose();
 
     emailAddressFocusNode?.dispose();
     emailAddressTextController?.dispose();

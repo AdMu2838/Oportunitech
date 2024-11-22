@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/enums/enums.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -20,20 +21,10 @@ class UsersRecord extends FirestoreRecord {
   String get email => _email ?? '';
   bool hasEmail() => _email != null;
 
-  // "display_name" field.
-  String? _displayName;
-  String get displayName => _displayName ?? '';
-  bool hasDisplayName() => _displayName != null;
-
   // "photo_url" field.
   String? _photoUrl;
   String get photoUrl => _photoUrl ?? '';
   bool hasPhotoUrl() => _photoUrl != null;
-
-  // "uid" field.
-  String? _uid;
-  String get uid => _uid ?? '';
-  bool hasUid() => _uid != null;
 
   // "created_time" field.
   DateTime? _createdTime;
@@ -45,13 +36,72 @@ class UsersRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
+  // "uid" field.
+  String? _uid;
+  String get uid => _uid ?? '';
+  bool hasUid() => _uid != null;
+
+  // "first_name" field.
+  String? _firstName;
+  String get firstName => _firstName ?? '';
+  bool hasFirstName() => _firstName != null;
+
+  // "last_name" field.
+  String? _lastName;
+  String get lastName => _lastName ?? '';
+  bool hasLastName() => _lastName != null;
+
+  // "birth_date" field.
+  DateTime? _birthDate;
+  DateTime? get birthDate => _birthDate;
+  bool hasBirthDate() => _birthDate != null;
+
+  // "department" field.
+  String? _department;
+  String get department => _department ?? '';
+  bool hasDepartment() => _department != null;
+
+  // "province" field.
+  String? _province;
+  String get province => _province ?? '';
+  bool hasProvince() => _province != null;
+
+  // "district" field.
+  String? _district;
+  String get district => _district ?? '';
+  bool hasDistrict() => _district != null;
+
+  // "conadis_status" field.
+  bool? _conadisStatus;
+  bool get conadisStatus => _conadisStatus ?? false;
+  bool hasConadisStatus() => _conadisStatus != null;
+
+  // "academic_degree" field.
+  AcademicDegree? _academicDegree;
+  AcademicDegree? get academicDegree => _academicDegree;
+  bool hasAcademicDegree() => _academicDegree != null;
+
+  // "display_name" field.
+  String? _displayName;
+  String get displayName => _displayName ?? '';
+  bool hasDisplayName() => _displayName != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
-    _displayName = snapshotData['display_name'] as String?;
     _photoUrl = snapshotData['photo_url'] as String?;
-    _uid = snapshotData['uid'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
+    _uid = snapshotData['uid'] as String?;
+    _firstName = snapshotData['first_name'] as String?;
+    _lastName = snapshotData['last_name'] as String?;
+    _birthDate = snapshotData['birth_date'] as DateTime?;
+    _department = snapshotData['department'] as String?;
+    _province = snapshotData['province'] as String?;
+    _district = snapshotData['district'] as String?;
+    _conadisStatus = snapshotData['conadis_status'] as bool?;
+    _academicDegree =
+        deserializeEnum<AcademicDegree>(snapshotData['academic_degree']);
+    _displayName = snapshotData['display_name'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -89,20 +139,36 @@ class UsersRecord extends FirestoreRecord {
 
 Map<String, dynamic> createUsersRecordData({
   String? email,
-  String? displayName,
   String? photoUrl,
-  String? uid,
   DateTime? createdTime,
   String? phoneNumber,
+  String? uid,
+  String? firstName,
+  String? lastName,
+  DateTime? birthDate,
+  String? department,
+  String? province,
+  String? district,
+  bool? conadisStatus,
+  AcademicDegree? academicDegree,
+  String? displayName,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'email': email,
-      'display_name': displayName,
       'photo_url': photoUrl,
-      'uid': uid,
       'created_time': createdTime,
       'phone_number': phoneNumber,
+      'uid': uid,
+      'first_name': firstName,
+      'last_name': lastName,
+      'birth_date': birthDate,
+      'department': department,
+      'province': province,
+      'district': district,
+      'conadis_status': conadisStatus,
+      'academic_degree': academicDegree,
+      'display_name': displayName,
     }.withoutNulls,
   );
 
@@ -115,21 +181,37 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
   @override
   bool equals(UsersRecord? e1, UsersRecord? e2) {
     return e1?.email == e2?.email &&
-        e1?.displayName == e2?.displayName &&
         e1?.photoUrl == e2?.photoUrl &&
-        e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
-        e1?.phoneNumber == e2?.phoneNumber;
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.uid == e2?.uid &&
+        e1?.firstName == e2?.firstName &&
+        e1?.lastName == e2?.lastName &&
+        e1?.birthDate == e2?.birthDate &&
+        e1?.department == e2?.department &&
+        e1?.province == e2?.province &&
+        e1?.district == e2?.district &&
+        e1?.conadisStatus == e2?.conadisStatus &&
+        e1?.academicDegree == e2?.academicDegree &&
+        e1?.displayName == e2?.displayName;
   }
 
   @override
   int hash(UsersRecord? e) => const ListEquality().hash([
         e?.email,
-        e?.displayName,
         e?.photoUrl,
-        e?.uid,
         e?.createdTime,
-        e?.phoneNumber
+        e?.phoneNumber,
+        e?.uid,
+        e?.firstName,
+        e?.lastName,
+        e?.birthDate,
+        e?.department,
+        e?.province,
+        e?.district,
+        e?.conadisStatus,
+        e?.academicDegree,
+        e?.displayName
       ]);
 
   @override

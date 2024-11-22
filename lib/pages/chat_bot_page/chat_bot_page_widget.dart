@@ -139,12 +139,15 @@ class _ChatBotPageWidgetState extends State<ChatBotPageWidget> {
             borderWidth: 1.0,
             buttonSize: 60.0,
             icon: const Icon(
-              Icons.dehaze,
+              Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
             ),
             onPressed: () async {
-              scaffoldKey.currentState!.openDrawer();
+              if (Navigator.of(context).canPop()) {
+                context.pop();
+              }
+              context.pushNamed('HomePages');
             },
           ),
           title: Text(
@@ -157,7 +160,7 @@ class _ChatBotPageWidgetState extends State<ChatBotPageWidget> {
                 ),
           ),
           actions: const [],
-          centerTitle: true,
+          centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
@@ -294,7 +297,7 @@ class _ChatBotPageWidgetState extends State<ChatBotPageWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
                     child: Container(
-                      width: 370.0,
+                      width: MediaQuery.sizeOf(context).width * 0.93,
                       height: 50.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).alternate,

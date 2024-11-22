@@ -5,6 +5,8 @@ import 'schema/util/firestore_util.dart';
 import 'schema/users_record.dart';
 import 'schema/chatbot_record.dart';
 import 'schema/chatbot_mensajes_record.dart';
+import 'schema/empleo_presentacion_record.dart';
+import 'schema/company_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -16,6 +18,8 @@ export 'schema/util/schema_util.dart';
 export 'schema/users_record.dart';
 export 'schema/chatbot_record.dart';
 export 'schema/chatbot_mensajes_record.dart';
+export 'schema/empleo_presentacion_record.dart';
+export 'schema/company_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -123,6 +127,80 @@ Future<List<ChatbotMensajesRecord>> queryChatbotMensajesRecordOnce({
     queryCollectionOnce(
       ChatbotMensajesRecord.collection,
       ChatbotMensajesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query EmpleoPresentacionRecords (as a Stream and as a Future).
+Future<int> queryEmpleoPresentacionRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      EmpleoPresentacionRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<EmpleoPresentacionRecord>> queryEmpleoPresentacionRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      EmpleoPresentacionRecord.collection,
+      EmpleoPresentacionRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<EmpleoPresentacionRecord>> queryEmpleoPresentacionRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      EmpleoPresentacionRecord.collection,
+      EmpleoPresentacionRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CompanyRecords (as a Stream and as a Future).
+Future<int> queryCompanyRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CompanyRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CompanyRecord>> queryCompanyRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CompanyRecord.collection,
+      CompanyRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CompanyRecord>> queryCompanyRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CompanyRecord.collection,
+      CompanyRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
